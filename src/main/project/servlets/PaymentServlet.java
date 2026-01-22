@@ -19,13 +19,13 @@ public class PaymentServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Employee employee = (Employee) request.getSession().getAttribute("employee");
+        // Employee employee = (Employee) request.getSession().getAttribute("employee");
 
-        // Vérifier les permissions
-        if (employee == null || (!employee.isAccountant() && !employee.isAdmin())) {
-            response.sendRedirect("dashboard");
-            return;
-        }
+        // // Vérifier les permissions
+        // if (employee == null || (!employee.isAccountant() && !employee.isAdmin())) {
+        //     response.sendRedirect("dashboard");
+        //     return;
+        // }
 
         String action = request.getParameter("action");
 

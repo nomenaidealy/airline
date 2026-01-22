@@ -3,11 +3,11 @@
 <%@ page import="java.util.List" %>
 
 <%
-    Employee employee = (Employee) session.getAttribute("employee");
-    if (employee == null) {
-        response.sendRedirect("login");
-        return;
-    }
+    // Employee employee = (Employee) session.getAttribute("employee");
+    // if (employee == null) {
+    //     response.sendRedirect("login");
+    //     return;
+    // }
     List<FlightRoute> routes = (List<FlightRoute>) request.getAttribute("flightRoutes");
 %>
 

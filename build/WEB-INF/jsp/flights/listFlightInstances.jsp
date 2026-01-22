@@ -6,11 +6,11 @@
 <%@ page import="java.sql.Date" %>
 
 <%
-    Employee employee = (Employee) session.getAttribute("employee");
-    if (employee == null) {
-        response.sendRedirect("login");
-        return;
-    }
+    // Employee employee = (Employee) session.getAttribute("employee");
+    // if (employee == null) {
+    //     response.sendRedirect("login");
+    //     return;
+    // }
     
     List<FlightInstance> instances = (List<FlightInstance>) request.getAttribute("flightInstances");
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");

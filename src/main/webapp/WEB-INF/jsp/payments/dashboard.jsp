@@ -1,11 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="main.project.beans.Employee" %>
 <%
-    Employee employee = (Employee) session.getAttribute("employee");
-    if (employee == null || (!employee.isAccountant() && !employee.isAdmin())) {
-        response.sendRedirect("dashboard");
-        return;
-    }
+    // Employee employee = (Employee) session.getAttribute("employee");
+    // if (employee == null || (!employee.isAccountant() && !employee.isAdmin())) {
+    //     response.sendRedirect("dashboard");
+    //     return;
+    // }
 
     double totalRevenue = (Double) request.getAttribute("totalRevenue");
     double monthRevenue = (Double) request.getAttribute("monthRevenue");

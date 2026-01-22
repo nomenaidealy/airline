@@ -132,7 +132,7 @@ VALUES
 INSERT INTO society (libelle)
 VALUES
 ('Vaniala'),
-('Lexis');
+('Lewis');
 
 
 INSERT INTO diffusion_price (montant, date_debut)
@@ -147,7 +147,21 @@ INSERT INTO diffusion (
 )
 VALUES
 (1, '2025-12-15', 20, 1),  -- Vaniala
-(2, '2025-12-20', 10, 1);  -- Lexis
+(2, '2025-12-20', 10, 1);  -- Lewis
+
+
+-- Création du paiement global pour la diffusion du 15-12-2025
+INSERT INTO paiement_societe (diffusion_id, montant_total)
+VALUES (1, 1000000.00);
+
+-- Paiement partiel déjà effectué
+INSERT INTO paiement_societe_detail (paiement_societe_id, date_paiement, montant_paye)
+VALUES (1, '2025-12-15', 1000000.00);
+
+INSERT INTO paiement_societe_detail (paiement_societe_id, date_paiement, montant_paye)
+VALUES (1, '2025-12-22', 100000.00);
+
+
 
 
 

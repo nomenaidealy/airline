@@ -16,30 +16,32 @@ public class AuthFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse,
                          FilterChain chain) throws IOException, ServletException {
-        HttpServletRequest request = (HttpServletRequest) servletRequest;
-        HttpServletResponse response = (HttpServletResponse) servletResponse;
+        // HttpServletRequest request = (HttpServletRequest) servletRequest;
+        // HttpServletResponse response = (HttpServletResponse) servletResponse;
 
-        String uri = request.getRequestURI();
-        String contextPath = request.getContextPath();
-        String path = uri.substring(contextPath.length());
+        // String uri = request.getRequestURI();
+        // String contextPath = request.getContextPath();
+        // String path = uri.substring(contextPath.length());
 
-        // Pages publiques
-        if (path.equals("/login") || path.startsWith("/css/") ||
-                path.startsWith("/js/") || path.startsWith("/images/")) {
-            chain.doFilter(request, response);
-            return;
-        }
+        // // Pages publiques
+        // if (path.equals("/login") || path.startsWith("/css/") ||
+        //         path.startsWith("/js/") || path.startsWith("/images/")) {
+        //     chain.doFilter(request, response);
+        //     return;
+        // }
 
-        // Vérifier session
-        HttpSession session = request.getSession(false);
-        Employee employee = (session != null) ? (Employee) session.getAttribute("employee") : null;
+        // // Vérifier session
+        // HttpSession session = request.getSession(false);
+        // Employee employee = (session != null) ? (Employee) session.getAttribute("employee") : null;
 
-        if (employee == null) {
-            response.sendRedirect(contextPath + "/login");
-            return;
-        }
+        // if (employee == null) {
+        //     response.sendRedirect(contextPath + "/login");
+        //     return;
+        // }
 
-        chain.doFilter(request, response);
+        // chain.doFilter(request, response);
+        chain.doFilter(servletRequest, servletResponse);
+
     }
 
     @Override
